@@ -1,6 +1,13 @@
 #include "lists.h"
-#include <stdio.h>
 
+int _strlen(const char *s)
+{
+	int compteur = 0;
+
+	while (s[compteur])
+		compteur ++;
+	return (compteur);
+}
 /**
  * print_list - prints all the elements of a list_t list
  * @h: pointer to the head of the list
@@ -13,11 +20,8 @@ size_t print_list(const list_t *h)
 
 	while (h)
 	{
-		if (h->str)
-			printf("[%u] %s\n", h->len, h->str);
-		else
-			printf("[0] (nil)\n");
-		h = h->next;
+		printf("[%d] %s\n",_strlen(h->str), h->str ? h->str : "(nil)");
+		h=h->next;
 		compteur++;
 	}
 	return (compteur);
