@@ -8,10 +8,10 @@ size_t print_list(const list_t *h)
 	while (h)
 	{
 		if (h->str)
-			printf("%s\n",h->str);
+			_putchar(h->str);
 			
 		else
-			printf("[0] (nil)\n");
+			_putchar("[0] (nil)\n");
 		h = h->next;
 		compteur++;
 	}
