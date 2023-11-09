@@ -1,28 +1,23 @@
 #include "variadic_functions.h"
-
 /**
- * sum_them_all - sum variadic args
- * @n: int to sum
- * Return: sum or 0 if none
+ * sum_them_all - Entry Point
+ * @n: variadic inputs
+ * Return: sum
  */
-
 int sum_them_all(const unsigned int n, ...)
 {
-	unsigned int sum = 0, i;
-	va_list vsum;
+	va_list vl;
+	int sum = 0,i=sum;
 
-	if (n == 0)
-	{
+	if (!n)
 		return (0);
-	}
 
-	va_start(vsum, n);
-
-	for (i = 0; i < n; i++)
+	va_start(vl, n);
+	while (i--)
 	{
-		sum = sum + va_arg(vsum, int);
+		sum += va_arg(vl, int);
 	}
+	va_end(vl);
 
-	va_end(vsum);
 	return (sum);
 }
