@@ -1,10 +1,12 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
+
 /**
- * sum_them_all - Entry Point
- * @n: variadic inputs
- * Return: sum
+ * sum_them_all - Sums a variable number of integers.
+ * @n: Number of arguments.
+ *
+ * Return: Sum of all arguments.
  */
 int sum_them_all(const unsigned int n, ...)
 {
@@ -25,3 +27,4 @@ int sum_them_all(const unsigned int n, ...)
 
 	return (sum);
 }
+
